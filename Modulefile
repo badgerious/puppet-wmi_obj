@@ -1,0 +1,7 @@
+name 'badgerious-wmi_obj'
+version '0.0.1'
+summary 'Manages WMI objects'
+description 'Create, delete, and modify Windows Management Instrumentation (WMI) objects'
+project_page 'https://github.com/badgerious/puppet-wmi_obj'
+license 'Apache License, Version 2.0'
+author 'badgerious'
