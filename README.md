@@ -145,4 +145,4 @@ wmi_class_purge { '__FilterToConsumerBinding':
 Compatibility
 --------------
 
-This module requires ruby 1.9+. It has been tested on 3.2.x and 3.4.x puppet master/agents. 
+This module has been tested on 3.2.x and 3.4.x puppet master/agents.
