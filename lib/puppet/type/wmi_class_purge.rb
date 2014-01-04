@@ -66,11 +66,11 @@ Puppet::Type.newtype(:wmi_class_purge) do
 
     (instances - resources).map do |props|
       props_string = props.map { |k,v| "#{k}=#{v}" }.join(',')
-      r = self.class::PURGE_CLASS.new(title: "#{self[:namespace]}:#{self[:wmiclass]}:#{props_string}",
-                                      namespace: self[:namespace],
-                                      wmiclass: self[:wmiclass],
-                                      props: props,
-                                      ensure: :absent)
+      r = self.class::PURGE_CLASS.new(:title => "#{self[:namespace]}:#{self[:wmiclass]}:#{props_string}",
+                                      :namespace => self[:namespace],
+                                      :wmiclass => self[:wmiclass],
+                                      :props => props,
+                                      :ensure => :absent)
       r.purging
       r
     end
