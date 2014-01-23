@@ -46,7 +46,7 @@ Puppet::Type.newtype(:wmi_class_purge) do
     end
     instances = wmi.ExecQuery(query).each.to_a
     if self[:postfilter] != :undef
-      instances.select! do |obj|
+      instances = instances.select do |obj|
         self[:postfilter].all? { |prop, val| val === obj.send(prop) }
       end
     end
