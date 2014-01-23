@@ -10,7 +10,7 @@ Puppet::Type.newtype(:wmi_obj) do
     unless @keyprops[namespace][wmiclass]
       klass = WIN32OLE.connect("winmgmts://./#{namespace}:#{wmiclass}")
       @keyprops[namespace][wmiclass] = klass.Properties_.each.select do |p|
-        p.Qualifiers_.each.any? { |q| q.Name == 'key' && q.Value = true }
+        p.Qualifiers_.each.any? { |q| q.Name == 'key' && q.Value == true }
       end.map { |p| p.Name.downcase }.sort
     end
     @keyprops[namespace][wmiclass]
